@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yogesh | Student Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #080810;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: #10101c;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 1px solid #272747;
+        }
+
+        .logo {
+            color: #a855f7;
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 22px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #c084fc;
+        }
+
+        /* Hero section */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            padding: 70px 10%;
+        }
+
+        .hero-text {
+            max-width: 600px;
+            animation: slideIn 1.2s ease;
+        }
+
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 65px);
+            margin: 15px 0;
+        }
+
+        .hero h1 span {
+            color: #c084fc;
+        }
+
+        .hero p {
+            color: #c5c5d8;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .tag {
+            color: #d8b4fe;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 25px;
+            background: #9333ea;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #7e22ce;
+            transform: translateY(-4px);
+            box-shadow: 0 0 20px #9333ea;
+        }
+
+        /* Animated circle */
+        .anime-circle {
+            width: 280px;
+            height: 280px;
+            flex-shrink: 0;
+            border: 3px solid #a855f7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 85px;
+            color: #d8b4fe;
+            background: radial-gradient(circle, #32104c, #0b0b18 70%);
+            box-shadow: 0 0 35px #7e22ce;
+            animation: float 3s ease-in-out infinite,
+                       glow 2s ease-in-out infinite alternate;
+        }
+
+        /* Sections */
+        section.content {
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 35px;
+            margin-bottom: 35px;
+        }
+
+        .section-title span {
+            color: #c084fc;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: #121222;
+            padding: 30px 22px;
+            border: 1px solid #292945;
+            border-radius: 14px;
+            transition: 0.35s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #a855f7;
+            box-shadow: 0 10px 30px #6b21a833;
+        }
+
+        .card h3 {
+            color: #d8b4fe;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #c5c5d8;
+            line-height: 1.7;
+        }
+
+        /* Contact */
+        .contact p {
+            color: #c5c5d8;
+            margin-bottom: 25px;
+        }
+
+        footer {
+            padding: 25px;
+            text-align: center;
+            color: #aaa;
+            background: #10101c;
+            border-top: 1px solid #272747;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-18px); }
+        }
+
+        @keyframes glow {
+            from { box-shadow: 0 0 20px #7e22ce; }
+            to { box-shadow: 0 0 50px #c084fc; }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 700px) {
+            header {
+                flex-direction: column;
+                gap: 18px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 14px;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 60px;
+            }
+
+            .anime-circle {
+                width: 210px;
+                height: 210px;
+                font-size: 65px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">YOGESH.</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-text">
+                <div class="tag">AI & Data Science Student</div>
+
+                <h1>Hello, I'm <span>Yogesh</span></h1>
+
+                <p>
+                    Welcome to my digital world! I am a first-year
+                    Artificial Intelligence and Data Science student
+                    passionate about technology, creativity, and learning.
+                    Inspired by the strength and determination of Sasuke
+                    Uchiha, I believe in improving my skills every day.
+                </p>
+
+                <a href="#about" class="btn">Explore My World</a>
+            </div>
+
+            <div class="anime-circle" aria-label="Purple animated emblem">
+                ⚡
+            </div>
+        </section>
+
+        <section class="content" id="about">
+            <h2 class="section-title">About <span>Me</span></h2>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>🎓 Education</h3>
+                    <p>
+                        First-year student in Artificial Intelligence
+                        and Data Science at Mount Zion College of
+                        Engineering and Technology.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🚀 My Goal</h3>
+                    <p>
+                        To develop my programming skills, explore AI,
+                        and build useful technology projects.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>🔥 My Inspiration</h3>
+                    <p>
+                        Sasuke Uchiha inspires me with his determination,
+                        focus, and constant pursuit of strength.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content" id="skills">
+            <h2 class="section-title">My <span>Skills</span></h2>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Communication</h3>
+                    <p>Sharing ideas and working with others.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Problem Solving</h3>
+                    <p>Learning to approach challenges logically.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Technology</h3>
+                    <p>Exploring HTML, CSS, programming, and AI.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content contact" id="contact">
+            <h2 class="section-title">Get In <span>Touch</span></h2>
+
+            <p>Thanks for visiting my portfolio!</p>
+
+            <a class="btn"
+               href="mailto:your-email@example.com">
+                Email Me
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Yogesh | Built with HTML & CSS</p>
+        <p>Believe in yourself. Keep growing. ⚡</p>
+    </footer>
+
+</body>
+</html>
